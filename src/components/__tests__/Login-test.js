@@ -8,6 +8,7 @@ describe("Login Component", () => {
     expect(tree).toMatchSnapshot();
   });
   it("should render without throwing an error", () => {
+    const wrapper = shallow(<Login />);
     expect(shallow(<Login />).find(".login").length).toBe(1);
   });
   it("renders a email input", () => {
