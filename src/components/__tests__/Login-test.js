@@ -2,10 +2,13 @@ import React from "react";
 import { shallow, mount, render } from "enzyme";
 import Login from "../Login";
 import renderer from "react-test-renderer";
-
 describe("Login Component", () => {
+  it("renders correctly", () => {
+    const tree = renderer.create(<Login />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   it("should render without throwing an error", () => {
-    //expect(shallow(<Login />).exists(<form className="login" />)).toBe(true);
+    expect(shallow(<Login />).find(".login").length).toBe(1);
   });
   it("renders a email input", () => {
     expect(shallow(<Login />).find("#email").length).toEqual(1);
