@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Login from "./components/Login";
+import Counter from "./components/Counter";
 
 class App extends Component {
   render() {
-    return <Login />;
+    return <Counter />;
   }
 }
 
